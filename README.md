@@ -4,6 +4,10 @@ This repository is a comprehensive knowledge base covering various computer scie
 
 
 ## Topics to cover:
+* Network - todo
+* Databases - todo
+* Queues - todo
+* AWS - in progress
 * todo
 
 ## Navigation
