@@ -3,10 +3,10 @@ This section covers the next topics:
 - [Authentication and Authorization](#authentication-and-authorization)
   - [Token-Based Authentication](#token-based-authentication)
     - [JWT - JSON Web Token](#jwt---json-web-token)
-    - [JWT Problems](#jwt-problems)
+        - [JWT Problems](#jwt-problems)
     - [oAuth](#oauth---) TBD
     - [OpenID Connect](#openid-connect---) TBD
-- [ ] TODO
+- TODO
 
 ## Authentication and Authorization
 **Authentication** is the process of verifying the identity of a user or system. It's about answering the question "Who are you?". (username and password, tokens...)
@@ -21,8 +21,8 @@ This section covers the next topics:
 5. Certificate-Based Authentication - digital certificates to verify identity.
 6. Biometric Authentication - Using physical characteristics such as fingerprints, face recognition, or retina scans.
 
-#### Token-Based Authentication
-##### [JWT - JSON Web Token](https://jwt.io/introduction)
+### Token-Based Authentication
+#### [JWT - JSON Web Token](https://jwt.io/introduction)
 JSON Web Tokens consist of three parts separated by dots (.), which are:
 * Header
 * Payload
@@ -41,17 +41,20 @@ To create the signature part you have to take the encoded header, the encoded pa
 
 > Beside the fact JWT is widley used, you should consider the article [Stop using JWTs](https://gist.github.com/samsch/0d1f3d3b4745d778f78b230cf6061452). The author proposes to use sessions instead.
 
-JWTs Are Designed for Short-Lived Tokens</br>
+###### JWTs Are Designed for Short-Lived Tokens
 Intended Use: JWTs are designed for short-lived tokens (e.g., 5 minutes or less), typically used in single sign-on (SSO) or API authorization contexts.
 
 Problem: User sessions often need longer lifespans, making JWTs a poor fit for maintaining state over extended periods.
 
-Stateless Authentication Challenges</br>
+###### Stateless Authentication Challenges
 Stateless Nature: JWTs are often promoted for "stateless authentication," where the server doesn't store session data. However:
 If a token is compromised, it cannot be revoked without significant additional infrastructure (e.g., a token blacklist).
 
-Security Vulnerabilities</br>
+###### Security Vulnerabilities
 Even though JWTs are signed, the payload is Base64Url-encoded, not encrypted. Sensitive information stored in the payload is exposed to anyone who intercepts it.
+
+#### Refresh token
+TODO
 
 ##### oAuth - ...
 
