@@ -17,7 +17,9 @@ This repository is a comprehensive knowledge base covering various computer scie
 - [] - todo
 
 ### Courses
-- [ ] [Highload Software Architecture - Projector course](https://prjctr.com/course/highload-software-architecture)
+- [ ] [Highload Software Architecture - Projector](https://prjctr.com/course/highload-software-architecture)
 - [ ] [ByteByteGo](https://bytebytego.com/courses/system-design-interview)
+- [ ] [AWS certified cloud practitioner - Udemy](https://www.udemy.com/course/aws-certified-cloud-practitioner-new)
+- [ ] [CompTIA Network+ - O'Reilly](https://www.oreilly.com/videos/comptia-network-n10-008/9780137507450/)
 - [ ] - todo
 
