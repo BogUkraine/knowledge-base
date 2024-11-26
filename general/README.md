@@ -54,7 +54,25 @@ If a token is compromised, it cannot be revoked without significant additional i
 Even though JWTs are signed, the payload is Base64Url-encoded, not encrypted. Sensitive information stored in the payload is exposed to anyone who intercepts it.
 
 #### Refresh token
-TODO
+A refresh token is a long-lived credential used to obtain a new access token once the original one expires. Also, it is not sent with every request
+like access token is.
+
+How to prevent its leakage? Well, we can just decrease the chances with:
+1. Store in HttpOnly Cookies - An HttpOnly cookie is a type of cookie inaccessible to client-side JavaScript, reducing the risk of theft through Cross-Site Scripting (XSS) attacks.
+2. Use Short-Lived Refresh Tokens with Rotation - Each time a refresh token is used, issue a new one and invalidate the old one
+3. Token binding ties a token to a specific client (e.g., a browser or device) by including unique identifiers (such as a device fingerprint or IP address) when generating the token.
+
+#### Third-party
+1. Auth0 - enterprise-grade
+2. Firebase Authentication - small-to-medium apps
+
+Reasons to choose a third-party solution:
+1. TTM - time to market is much shorter, you don't need to design it on your own.
+2. Security - you don't need to be aware of new breaches or potential problems and urgently fix them
+on your side, as Auth0 is in control over it.
+3. Feature richness - supports SSO, MFA, passwordless login, and role-based access control.
+
+But it's not a cheap service.
 
 ##### oAuth - ...
 
