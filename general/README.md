@@ -3,7 +3,9 @@ This section covers the next topics:
 - [Authentication and Authorization](#authentication-and-authorization)
   - [Token-Based Authentication](#token-based-authentication)
     - [JWT - JSON Web Token](#jwt---json-web-token)
-        - [JWT Problems](#jwt-problems)
+      - [JWT Problems](#jwt-problems)
+      - [Refresh token](#refresh-token)
+      - [Third-party](#third-party)
     - [oAuth](#oauth---) TBD
     - [OpenID Connect](#openid-connect---) TBD
 - TODO
@@ -53,7 +55,7 @@ If a token is compromised, it cannot be revoked without significant additional i
 ###### Security Vulnerabilities
 Even though JWTs are signed, the payload is Base64Url-encoded, not encrypted. Sensitive information stored in the payload is exposed to anyone who intercepts it.
 
-#### Refresh token
+##### Refresh token
 A refresh token is a long-lived credential used to obtain a new access token once the original one expires. Also, it is not sent with every request
 like access token is.
 
@@ -62,7 +64,7 @@ How to prevent its leakage? Well, we can just decrease the chances with:
 2. Use Short-Lived Refresh Tokens with Rotation - Each time a refresh token is used, issue a new one and invalidate the old one
 3. Token binding ties a token to a specific client (e.g., a browser or device) by including unique identifiers (such as a device fingerprint or IP address) when generating the token.
 
-#### Third-party
+##### Third-party
 1. Auth0 - enterprise-grade
 2. Firebase Authentication - small-to-medium apps
 
