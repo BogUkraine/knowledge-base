@@ -28,3 +28,41 @@ Pricing:
 ## Availability zone
 Availability zone is one or more discrete data centers with redundant power, networking, and connectivity.
 Each region has 3-6 availability zones.
+![alt text](../images/aws/availability-zone1.png)
+
+## IAM
+IAM - Identity and Access Management - global service.
+
+Groups only contain users, not other groups. User can belong to multiple groups and could be not a part of any group.
+![alt text](../images/aws/iam1.png)
+
+Users or Groups can be assigned with policies.
+
+### Policies
+Consists of:
+* Version - policy language version - "2012-10-17"
+* (optional) Id - an identifier for the policy
+* Statement - one or more individual statements
+```
+{
+    "Version": "2012-10-17",
+    "Id": "Some-ID",
+    "Statement": [
+        {
+            "Sid": "FullAccess",  - identifier
+            "Effect": "Allow",    - Allow, Deny
+            "Action": ["s3:*"],   - list of actions (s3:GetObject)
+            "Principal": {        - account/user/role to which the policy applied to
+                ...
+            }
+            "Resource": ["*"]     - list of resources to which the action is applied ("arn:aws:s3:::mybucket/*")
+        },
+        {
+            "Sid": "DenyCustomerBucket",
+            "Action": ["s3:*"],
+            "Effect": "Deny",
+            "Resource": ["arn:aws:s3:::customer", "arn:aws:s3:::customer/*" ]
+        }
+    ]
+}
+```
