@@ -1,7 +1,7 @@
 # AWS
 This section covers the next topics:
-- [ ] 1
-- [ ] 2
+- [Cloud](#cloud)
+- [Availability zone](#availability-zone)
 - [ ] todo
 
 ## Cloud
@@ -13,3 +13,18 @@ Advantages:
 4. Elasticity
 5. High-availability and fault-torelance
 6. Agility
+
+Types of cloud computing:
+* IaaS - Infrastructure as a Service - EC2
+* PaaS - Platform as a Service - Elastic Beanstalk
+* SaaS - Software as a Service - Rekognition
+![alt text](../images/aws/cloud1.png)
+
+Pricing:
+* Compute - Lambda, EC2, ECS
+* Storage - S3
+* Data transfer out of the cloud
+
+## Availability zone
+Availability zone is one or more discrete data centers with redundant power, networking, and connectivity.
+Each region has 3-6 availability zones.
