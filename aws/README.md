@@ -2,7 +2,11 @@
 This section covers the next topics:
 - [Cloud](#cloud)
 - [Availability zone](#availability-zone)
-- [ ] todo
+- [IAM](#availability-zone)
+    - [IAM Policies](#policies)
+    - [IAM Roles](#iam-roles)
+    - [IAM Best practices](#best-practices)
+- TODO
 
 ## Cloud
 Cloud computing is the on-demand delivery of compute power, database storage, application, and other IT resources.
@@ -66,3 +70,20 @@ Consists of:
     ]
 }
 ```
+
+### IAM Roles
+Secure way to grant permissions to entities in AWS.
+Unlike IAM users, roles are not tied to a specific individual or service; instead, they are assumed by trusted entities such as AWS services, applications, or users.
+
+Roles provide temporary security credentials (access keys, secret keys, and session tokens) to perform tasks based on the defined permissions. They are widely used for scenarios like granting EC2 instances access to S3, cross-account access,
+or enabling AWS Lambda functions to interact with other AWS resources securely.
+
+### Best practices
+* Don't use the root account
+* One physical user - one AWS user
+* Assign users to groups and assign permissions to groups
+* Create a strong password policy
+* Use and enforce the use of MFA
+* Create and use Roles for giving permissions to AWS services
+* Use Access Keys for Programmatic access
+* Audit permissions of your account using IAM Credentials Report & IAM Access Advisor
