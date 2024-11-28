@@ -6,7 +6,14 @@ This section covers the next topics:
     - [IAM Policies](#policies)
     - [IAM Roles](#iam-roles)
     - [IAM Best practices](#best-practices)
-- TODO
+- [EC2](#ec2)
+    - [Configuration](#configuration)
+    - [Instance Types](#instance-types)
+    - [Security Groups](#security-groups)
+- [S3](#) - todo
+- [ECS](#) - todo
+- [VPC](#) - todo
+- in progress
 
 ## Cloud
 Cloud computing is the on-demand delivery of compute power, database storage, application, and other IT resources.
@@ -87,3 +94,49 @@ or enabling AWS Lambda functions to interact with other AWS resources securely.
 * Create and use Roles for giving permissions to AWS services
 * Use Access Keys for Programmatic access
 * Audit permissions of your account using IAM Credentials Report & IAM Access Advisor
+
+## EC2 - Elastic Compute Cloud
+Amazon Elastic Compute Cloud (EC2) is a web service that provides secure, resizable compute capacity in the cloud. EC2’s simple interface allows to obtain and configure capacity with minimal friction.
+
+It provides you with complete control of your computing resources and lets you run on Amazon’s proven computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change. Amazon EC2 provides developers the tools to build failure resilient applications and isolate them from common failure scenarios.
+
+### Configuration
+* Operating System: Linux, Windows, Mac OS
+* CPU
+* RAM
+* Storage-space
+* Network card
+* Firewall rules
+* Bootstrap script
+
+### Instance types
+How to read: `m5.2xlarge`
+* `m` - instance class
+* `5` - generation
+* `2xlarge` - size within the instance class
+
+Types:
+* General Purpose Instances: Provide a balanced mix of compute, memory, and networking resources, suitable for a variety of workloads such as web servers and code repositories. Examples include the M7g and T4g families
+* Compute Optimized Instances: Designed for compute-intensive applications that benefit from high-performance processors, ideal for tasks like batch processing and high-performance web servers. The C7g family is a representative example.
+* Memory Optimized Instances: Offer high memory capacity for memory-intensive applications, such as databases and real-time big data analytics. The R7g family falls into this category.
+* Storage Optimized Instances: Provide high, sequential read and write access to large datasets on local storage, suitable for data warehousing and distributed file systems. Examples include the I4i and D3 families.
+* Accelerated Computing Instances: Utilize hardware accelerators, or co-processors, to perform functions like floating-point number calculations and graphics processing more efficiently than software running on CPUs. The P5 and G5 families are examples.
+* High-Performance Computing Instances: Purpose-built to offer the best price performance for running HPC workloads at scale on AWS, ideal for large, complex simulations and deep learning workloads. The Hpc7g family is an example.
+
+### Security Groups
+Security groups control how traffic is allowed into or out of EC2. It is a virtual firewall.
+They only contain `allow` rules.
+
+Security groups riles can be reference by IP or by security group.
+![alt text](/images/aws/ec21.png)
+
+They are locked down to a region/VPC combination.
+
+It's good to maintain one separate security group for SSH access.
+
+Classic ports:
+* 21 - FTP
+* 22 - SSH, SFTP
+* 80 - HTTP
+* 443 - HTTPS
+* 3389 - RDP

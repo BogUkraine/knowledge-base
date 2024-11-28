@@ -10,6 +10,7 @@ This repository is a comprehensive knowledge base covering various computer scie
 * todo
 
 ## Navigation
+* [AWS](./aws/README.md)
 * todo
 
 ## Plans
