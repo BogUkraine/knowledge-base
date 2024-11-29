@@ -165,3 +165,38 @@ Snaphot is a copy of EBS volume at a point in time. Can copy shanpshots across A
 Features:
 * Archive - to save 75%, takes 24-72 hours for restoring the archive.
 * Recycle Bin for EBS Snapshots (specify retention 1 day - 1 year)
+
+### AMI - Amazon Machine Image
+AMI is a customization of an EC2 instance. This also creates EBS snapshot behind the scenes.
+
+### EC2 Instance Store
+EBS volumes are network drives with limited performance. If we need a high-performance hardware disk, use EC2 Instance Store.
+
+* Better I/O performance.
+* EC2 Instance Store lose their storage if they are stopped.
+* Good for buffer/cache/scratch data/temp content.
+
+### EFS - Elastic File System
+It's managed NFS (network file system) that can be mounted on 100s of EC2. It only works with Linux EC2 instances in multi AZ.
+
+* Highly available
+* Scalable
+* Expensive (3x gp2)
+* Pay per use
+* No capacity planning
+
+#### EBS vs EFS
+![alt text](/images/aws/ec23.png)
+
+#### EFS-IA - Infrequent Access
+That's a storage class that is cost-optimized for files not accessed every day.
+
+* Up to 92% lower cost compared to EFS Standard
+* EFS will automatically move your files to EFS-IA based on the last time they were accessed and lifecycle policy.
+
+### FSx - File Service
+Manager service to launch 3rd party high-performance file system
+* Amazon FSx for Windows File Server
+* Amazon FSx for Lustre (Linux): 100s GB/s, millions of IOPs, sub-ms latencies 
+
+![alt text](/images/aws/ec24.png)
