@@ -140,3 +140,28 @@ Classic ports:
 * 80 - HTTP
 * 443 - HTTPS
 * 3389 - RDP
+
+### Purchasing options
+* On-demand instances - short workload, predictable pricing, pay by second
+* Reserved (1 & 3 years)
+    * reserved instances - long workloads
+    * convertible reserved instances - long workloads with flexible instances
+* Savings Plans (1 & 3 years) - commitment to an amount of usage, long workload
+* Spot instances - short workloads, cheap, can lose instances (less reliable)
+* Dedicated Hosts - book an entire physical server, control instance placement
+* Dedicated Instances - no other customers will share your hardware
+* Capacity Reservations - reserve capacity in a specific AZ for any duration
+![alt text](/images/aws/ec22.png)
+
+### EBS - Elastic Block Store
+#### Volume
+EBS Volume is a network drive (not a physical drive) you can attach to your EC2. It is bound to a specific AZ.
+
+It can only be mounted to one instance at a time, except for io1 and io2 volume types (EBS Multi-Attach feature).
+
+#### Snapshot
+Snaphot is a copy of EBS volume at a point in time. Can copy shanpshots across AZ or Region.
+
+Features:
+* Archive - to save 75%, takes 24-72 hours for restoring the archive.
+* Recycle Bin for EBS Snapshots (specify retention 1 day - 1 year)
