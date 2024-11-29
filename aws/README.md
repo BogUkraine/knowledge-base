@@ -10,6 +10,20 @@ This section covers the next topics:
     - [Configuration](#configuration)
     - [Instance Types](#instance-types)
     - [Security Groups](#security-groups)
+    - [Purchasing options](#purchasing-options)
+    - [EBS - Elastic Block Store](#ebs---elastic-block-store)
+        - [Volume](#volume)
+        - [Snapshot](#snapshot)
+    - [AMI - Amazon Machine Image](#ami---amazon-machine-image)
+    - [EC2 Instance Store](#ec2-instance-store)
+    - [EFS - Elastic File System](#efs---elastic-file-system)
+        - [EBS vs EFS](#ebs-vs-efs)
+        - [EFS-IA - Infrequent Access](#efs-ia---infrequent-access)
+    - [FSx - File Service](#fsx---file-service)
+    - [Load Balancer](#load-balancer)
+        - [Load Balancer Types](#load-balancer-types)
+    - [Auto Scaling Group](#auto-scaling-group)
+        - [Scaling Strategies](#scaling-strategies)
 - [S3](#) - todo
 - [ECS](#) - todo
 - [VPC](#) - todo
@@ -200,3 +214,28 @@ Manager service to launch 3rd party high-performance file system
 * Amazon FSx for Lustre (Linux): 100s GB/s, millions of IOPs, sub-ms latencies 
 
 ![alt text](/images/aws/ec24.png)
+
+### Load Balancer
+Load Balancers are servers that forward internet traffic to multiple servers (EC2) downstream.
+![alt text](/images/aws/ec25.png)
+
+#### Load Balancer Types
+1. Application Load Balancer (HTTP/HTTPS/gRPC) - Layer 7
+2. Network Load Balancer (high performance, allows for TCP) - Layer 4
+3. Gateway Load Balancer - Layer 3
+4. Classic Load Balancer (retired 2023) - Layer 4 & 7
+![alt text](/images/aws/ec26.png)
+
+### Auto Scaling Group
+* scale out - add EC2
+* scale in - remove EC2
+* automatically register new instances to a load balancer
+* replace unhealty instances
+
+#### Scaling Strategies
+* Manual Scaling
+* Dynamic Scaling
+    * Simple / Step Scaling - Cloud watch alarm is triggered CPU > 70% - add 2 units
+    * Target Tracking Scaling - the average ASG CPU should stay at arount 40%
+    * Scheduled Scaling - known patterns usage
+* Predictive Scaling - uses machine learning to predict future traffic ahead of time
