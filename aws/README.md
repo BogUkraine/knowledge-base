@@ -239,3 +239,42 @@ Load Balancers are servers that forward internet traffic to multiple servers (EC
     * Target Tracking Scaling - the average ASG CPU should stay at arount 40%
     * Scheduled Scaling - known patterns usage
 * Predictive Scaling - uses machine learning to predict future traffic ahead of time
+
+## S3 - Simple Storage Service
+Amazon S3 is an object storage service that stores data as objects within buckets.
+An object is a file and any metadata that describes the file.
+A bucket is a container for objects.
+
+* Buckets must have a globally unique name (across all regions all accounts)
+* Buckets are defined at the region level
+* Max object size is 5TB
+
+Bucket types:
+1. General Purpose
+2. Directory
+
+### Features
+* Allows to host static content/website.
+* Versioning
+    * enabled at the bucket level
+    * same key overwrite will change the version
+    * any file that is not versioned prior to enabling versioning will have version 'null'
+    * suspending versioning does not delete the previous versions
+    * deleting objects with version ID null will place a delete marker and the file could be restored
+
+### Security
+* User-based
+    * IAM Policies - API calls
+* Resource-based
+    * Bucket Policies - bucket wide rules from the S3 console
+    * Object Access Control List (ACL) - finer grain (can be disabled)
+    * Bucket Access Control List (ACL) - less common (can be disabled)
+* Encryption - using encryption keys
+
+### Storage Classes
+* Standard: General-purpose storage for frequently accessed data.
+* Intelligent-Tiering: Automatically moves data between two access tiers when access patterns change.
+* Standard-IA (Infrequent Access): For data that is accessed less frequently but requires rapid access when needed.
+* One Zone-IA: Lower-cost option for infrequently accessed data that does not require multiple Availability Zone resilience.
+* Glacier: Low-cost storage for data archiving with retrieval times ranging from minutes to hours.
+* Glacier Deep Archive: Lowest-cost storage for long-term data archiving with retrieval times of 12 hours or more.
