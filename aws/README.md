@@ -24,7 +24,15 @@ This section covers the next topics:
         - [Load Balancer Types](#load-balancer-types)
     - [Auto Scaling Group](#auto-scaling-group)
         - [Scaling Strategies](#scaling-strategies)
-- [S3](#) - todo
+- [S3](#s3---simple-storage-service)
+    - [Features](#features)
+    - [Security](#security)
+    - [Storage Classes](#storage-classes)
+    - [Replication](#replication)
+    - [Encryption](#s3-encryption)
+    - [AWS Snow Family](#aws-snow-family)
+- [Databases](#databases)
+    - [RDS](#rds)
 - [ECS](#) - todo
 - [VPC](#) - todo
 - in progress
@@ -278,3 +286,30 @@ Bucket types:
 * One Zone-IA: Lower-cost option for infrequently accessed data that does not require multiple Availability Zone resilience.
 * Glacier: Low-cost storage for data archiving with retrieval times ranging from minutes to hours.
 * Glacier Deep Archive: Lowest-cost storage for long-term data archiving with retrieval times of 12 hours or more.
+
+### Replication
+* CRR - Cross region replication - compliance, lower latency access, replication across accounts
+* SRR - Same region replication - log aggregation, live replication between prod and test
+
+Features:
+* Must enable versioning in source and destination buckets
+* buckets can be in different AWS accounts
+* Replication happens asynchronously
+
+### S3 Encryption
+* Server-Side Entryption (default)
+* Client-Side Encryption
+
+### AWS Snow Family
+Offline devices to perform data migrations. 
+
+#### Flow
+1. Request Snowball devices from the AWS console for delivery
+2. Install the snowball client / AWS OpsHub on your servers
+3. Connect the device to the server and copy files using the client
+4. Ship back the device
+5. Data will be loaded into S3
+6. Snowball is completely wiped
+
+## Databases
+### RDS
