@@ -312,4 +312,124 @@ Offline devices to perform data migrations.
 6. Snowball is completely wiped
 
 ## Databases
-### RDS
+### RDS - Relational Database Service
+It's managed DB service for SQL DBs. Examples are: Postgres, MySQL, MariaDB, Oracle, Microsoft SQL Server, IBM DB2, Aurora (AWS proprietary database).
+
+You cannot SSH into the instance
+
+#### Creation
+Templates:
+* Production
+* Dev/Test
+* Free tier
+
+#### Deployments
+* Read Replicas
+    * Scale the read workload with up to 15 Read Replicas
+    * Data is only written to the main DB
+    
+![alt text](/images/aws/rds1.png)
+* Multi-AZ
+    * Failover in case of AZ outage
+    * Data is only read/written to the main database
+    * only one failover AZ
+
+![alt text](/images/aws/rds2.png)
+* Multi-Region
+    * Disaster recovery
+    * Local performance for global reads
+
+![alt text](/images/aws/rds3.png)
+
+### Aurora
+Aurora is proprietary technology from AWS (not open sources). It's cloud optimized and claims 5x performance improvement over MySQL on RDS, over 3x performance of Postgres on RDS
+
+Its storage automatically grows in increments of 10GB, up to 128 TB.
+
+#### RDS vs Aurora
+RDS is an overlay technology based on existing databases such as Oracle, MySQL, and Microsoft SQL Server, while Aurora is a separate option that has been built from the ground up by AWS. 
+
+RDS provides a quick-and-easy setup process with preconfigured parameter settings, while Aurora requires more work upfront to customize data storage.
+
+In terms of infrastructure, RDS runs on dedicated hardware clusters in AWS’s data centres with certain hardware limitations, while Aurora has virtually unlimited compute and storage scaling capabilities. That said, RDS can be moved easily between regions or Availability Zones within a region without configuration changes, whereas for Aurora, there are associated risks involved with live data transfers. 
+
+#### Amazon Aurora Serverless
+Automated database instantiation and auto-scaling based on actual usage.
+
+### ElastiCache
+The same way RDS is to get managed Relational Databases it works for Redis or Memcached.
+
+### DynamoDB
+Fully managed highly available db with replication across 3 AZ. It's NoSQL - key/value. It's "serverless" database.
+
+Handles:
+* Millions of RPS
+* Trillions of row
+* 100s of TB of storage
+* Single-digit millisecond latency
+
+#### DymanoDB Accelerator - DAX
+Fully managed in-memory cache for DynamoDB. 10x performance improvement.
+
+#### Global tables
+It allows to create DynamoDB table accessible with low latency in multiple regions with 2-way replication. You can acrively read and write to DB in any region.
+
+### Redshift
+Based on Postgres. It's OLAP (Online analytical processing) - analytics and data warehousing
+
+Features:
+* 10x better performance than other data warehouses
+* scale to PBs of data
+* load data once an hour
+* columnar storage of data
+* Massively Parallel Query Execution (MPP)
+* BI tools (Tableau) is integrated
+* SQL interface for queries
+
+#### Redshift serverless
+...
+
+### Amazon EMR
+Elastic MapReduce - helps creating Hadoop clusters to analyze and process vast amount of data.
+
+### Amazon Athena
+Serverless query service to perform analytics against S3 objects. Uses SQL to query the files.
+
+Supports CSV, JSON, ORC, Avro, Parquet.
+
+### Amazon QuickSight
+Serverless machine learning-powered business intelligence service to create interactive dashboards.
+
+Integrated with RDS, Aurora, Athena, Redshift, S3...
+
+### Amazon DocumentDB
+Aurora version of MongoDB.
+
+### Amazon Neptune
+Fully managed graph database.
+
+Features:
+* Highly available across 3 AZ, up 15 read replicas
+
+### Amazon Timestream
+Fully managed serverless time series DB.
+
+### Amazon QLDB - Quantum Ledger Database
+A ledger is a book recording financial transactions. Fully managed, serverless, replication across 3 AZ.
+
+Used to review history of all the changes made to application data over time. It is immutable - no entry can be removed or modified, cryptographically verifiable. There is no decentralization component.
+
+Manipulate with data using SQL.
+
+### Amazon Managed Blockchain
+It is a managed service to join public blockchain networks or create your own scalable private network.
+
+Compatible with Hyperledger Fabric and Ethereum.
+
+### Glue
+Managed extract, transform and load (ETL) service. Useful to prepare and transform data for analytics. Fully serverless.
+![alt text](/images/aws/rds4.png)
+
+### DMS - Database Migration Service
+
+## ECS
