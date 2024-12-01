@@ -32,8 +32,34 @@ This section covers the next topics:
     - [Encryption](#s3-encryption)
     - [AWS Snow Family](#aws-snow-family)
 - [Databases](#databases)
-    - [RDS](#rds)
-- [ECS](#) - todo
+    - [RDS](#rds---relational-database-service)
+        - [Deployments](#deployments)
+    - [Aurora](#aurora)
+        - [RDS vs Aurora](#rds-vs-aurora)
+        - [Aurora Serverless](#amazon-aurora-serverless)
+    - [ElastiCache](#elasticache)
+    - [DynamoDB](#dynamodb)
+        - [DymanoDB Accelerator](#dymanodb-accelerator---dax)
+        - [Global tables](#global-tables)
+    - [Redshift](#redshift)
+        - [Redshift serverless](#redshift-serverless)
+    - [EMR - Elastic MapReduce](#amazon-emr)
+    - [Athena](#amazon-athena)
+    - [QuickSight](#amazon-quicksight)
+    - [DocumentDB](#amazon-documentdb)
+    - [Neptune](#amazon-neptune)
+    - [Timestream](#amazon-timestream)
+    - [QLDB - Quantum Ledger Database](#amazon-qldb---quantum-ledger-database)
+    - [Managed Blockchain](#amazon-managed-blockchain)
+    - [Glue](#glue)
+    - [DMS - Database Migration Service](#dms---database-migration-service)
+- [ECS - Elastic Container Service](#ecs---elastic-container-service)
+    - [Fargate](#fargate)
+- [EKS - Elastik Kubernetes Service](#eks---elastik-kubernetes-service)
+- [Lambda](#amazon-lambda)
+- [API Gateway](#api-gateway)
+- [Batch](#aws-batch)
+- [Lightsail](#amazon-lightsail)
 - [VPC](#) - todo
 - in progress
 
@@ -433,15 +459,17 @@ Managed extract, transform and load (ETL) service. Useful to prepare and transfo
 ### DMS - Database Migration Service
 
 ## ECS - Elastic Container Service
+Run Docker containers on EC2.
 Amazon ECS is a fully managed container orchestration service that makes it easy to deploy, manage, and scale containerized applications using Docker. It supports both Docker and AWS Fargate, allowing you to run containers without needing to manage the underlying infrastructure.
 
-### Amazon ECR - Elastic Container Registry
+## Amazon ECR - Elastic Container Registry
 Amazon private analogue of docker hub. For more information about docker see [link](/general/README.md#docker)
 
 ### Fargate
+Run Docker containers without provisioning the infrastructure.
 AWS Fargate is a serverless compute engine for containers that works with both Amazon ECS and Amazon EKS (Elastic Kubernetes Service). With Fargate, you don't need to provision or manage servers; you simply specify the resources required for your containers, and Fargate handles the rest.
 
-### EKS - Elastik Kubernetes Service
+## EKS - Elastik Kubernetes Service
 Allows to launch managed Kubernetes clusters on AWS. Containers can be hosted on:
 1. EC2 instances
 2. Fargate (Serverless)
