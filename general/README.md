@@ -6,8 +6,11 @@ This section covers the next topics:
       - [JWT Problems](#jwt-problems)
       - [Refresh token](#refresh-token)
       - [Third-party](#third-party)
-    - [oAuth](#oauth---) TBD
-    - [OpenID Connect](#openid-connect---) TBD
+    - [oAuth](#oauth---) - TODO
+    - [OpenID Connect](#openid-connect---) - TODO
+- [Virtualization](#virtualization) - TODO
+- [Containerization](#containerization) - TODO
+  - [Docker](#docker)
 - TODO
 
 ## Authentication and Authorization
@@ -76,6 +79,18 @@ on your side, as Auth0 is in control over it.
 
 But it's not a cheap service.
 
-##### oAuth - ...
+##### oAuth
 
-##### OpenID Connect - ...
+TODO
+##### OpenID Connect
+TODO
+
+## Virtualization
+
+TODO
+
+## Containerization
+TODO
+
+### Docker
+todo

@@ -432,4 +432,31 @@ Managed extract, transform and load (ETL) service. Useful to prepare and transfo
 
 ### DMS - Database Migration Service
 
-## ECS
+## ECS - Elastic Container Service
+Amazon ECS is a fully managed container orchestration service that makes it easy to deploy, manage, and scale containerized applications using Docker. It supports both Docker and AWS Fargate, allowing you to run containers without needing to manage the underlying infrastructure.
+
+### Amazon ECR - Elastic Container Registry
+Amazon private analogue of docker hub. For more information about docker see [link](/general/README.md#docker)
+
+### Fargate
+AWS Fargate is a serverless compute engine for containers that works with both Amazon ECS and Amazon EKS (Elastic Kubernetes Service). With Fargate, you don't need to provision or manage servers; you simply specify the resources required for your containers, and Fargate handles the rest.
+
+### EKS - Elastik Kubernetes Service
+Allows to launch managed Kubernetes clusters on AWS. Containers can be hosted on:
+1. EC2 instances
+2. Fargate (Serverless)
+
+## Amazon Lambda
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. 
+
+Price is based on calls and duration (GB (RAM)/ sec)
+
+## API Gateway
+Fully managed service to create, publish, maintain and monitor APIs.
+![alt text](/images/aws/apigateway1.png)
+
+## AWS Batch
+Fully managed batch processing at any scale. Efficiently run 100,000s of computing batch jobs on AWS. It will dynamically launch EC2 istances or Spot Instances.
+
+## Amazon Lightsail
+Amazon Lightsail is a simplified cloud platform designed for those who need a straightforward way to launch and manage virtual private servers.
