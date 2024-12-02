@@ -59,7 +59,10 @@ This section covers the next topics:
 - [Lambda](#amazon-lambda)
 - [API Gateway](#api-gateway)
 - [Batch](#aws-batch)
-- [Lightsail](#amazon-lightsail)
+- [Something you will never use](...)
+    - [Lightsail](#amazon-lightsail)
+- [Deployments and Managing]()
+- [CloudFormation]
 - [VPC](#) - todo
 - in progress
 
@@ -488,3 +491,66 @@ Fully managed batch processing at any scale. Efficiently run 100,000s of computi
 
 ## Amazon Lightsail
 Amazon Lightsail is a simplified cloud platform designed for those who need a straightforward way to launch and manage virtual private servers.
+
+## Deployments and Managing
+
+### CloudFormation - IaC - Infrastructure as code
+CloudFormation is a declarative way of outlining AWS infrastructure for any resources.
+
+The same as Terraform or OpenTofu, but AWS specific only.
+
+#### CDK - Cloud Development Kit
+Allows to write a configuration with programming language, that will transpile into JSON/YML confiuguration for CloudFormation.
+
+### Elastic Beanstalk - Platform as a Service (PaaS)
+AWS Elastic Beanstalk is a Platform as a Service (PaaS) that simplifies the process of deploying, managing, and scaling web applications and services.
+
+Features:
+* Automatic Scaling: Automatically adjusts capacity to handle traffic demands.
+* Managed Environment: Handles infrastructure provisioning, load balancing, scaling, and monitoring.
+* Easy Deployment: Deploy applications using the AWS Management Console, CLI, or IDEs.
+* Customization: Customize the environment with configuration files and environment variables.
+* Monitoring and Logging: Integrated with Amazon CloudWatch for monitoring and logging.
+
+### CodeDeploy
+AWS CodeDeploy is a fully managed deployment service that automates the process of deploying applications to various compute services
+such as Amazon EC2, AWS Fargate, AWS Lambda, and on-premises servers.
+
+Servers/Instances must be provisioned and configured ahead of time with the CodeDeploy Agent.
+Handy to upgrade instances.
+
+### CodeBuild
+Compiles source code, run tests, produces packages that are ready to be deployed.
+
+### CodePipeline
+Orchestrate the different steps to have the code automatically pushed to production.
+
+### System Manager (SSM)
+AWS Systems Manager is a unified interface that allows you to manage your AWS resources securely at scale. It provides a suite of tools to automate operational tasks, manage configurations, and maintain security and compliance.
+
+Features:
+* Automation: Automate common maintenance and deployment tasks.
+* Run Command: Execute commands on your instances without needing to log in.
+* Patch Manager: Automate the process of patching managed instances with security updates.
+* Parameter Store: Securely store and manage configuration data and secrets.
+* Inventory: Collect and query configuration and inventory information about your instances and software.
+* Session Manager: Securely connect to your instances without needing an SSH key or bastion host.
+
+We need to install the SSM agent onto the systems we control. Installed by default on Amazon Linux AMI.
+
+#### SSM Session Manager
+AWS SSM (Systems Manager) Session Manager is a feature of AWS Systems Manager that provides a secure and auditable way to manage and interact with your EC2 instances and on-premises servers without needing to open inbound ports, manage SSH keys, or use bastion hosts.
+
+Features:
+* Secure Access: Establish secure shell connections to your instances without needing SSH keys.
+* No Inbound Ports: Connect to instances without opening inbound ports, reducing the attack surface.
+* Auditability: Log session activity to AWS CloudTrail and Amazon CloudWatch Logs for auditing and compliance.
+* Port Forwarding: Forward traffic securely from your local machine to remote instances.
+
+EC2 needs IAM Role.
+
+#### System Manager Parameter Store
+It is a secure storage service for managing configuration data and secrets. It allows you to store data such as passwords, database strings, license codes, and other configuration values as parameter values.
+
+## Global infrastructure
+### Route 53
