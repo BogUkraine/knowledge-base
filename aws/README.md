@@ -554,3 +554,42 @@ It is a secure storage service for managing configuration data and secrets. It a
 
 ## Global infrastructure
 ### Route 53
+Route53 is a managed DNS (Domain Name System)
+
+Routing policies:
+* Simple routing - Returns a single IP address for a DNS query
+* Weighted Routing - Distributes traffic across multiple resources based on assigned weights
+* Latency-Based Routing - Routes traffic to the resource with the lowest latency for the user
+* Failover Routing - Routes traffic to a primary resource unless it is unhealthy, then routes to a secondary resource
+* Geolocation Routing - Useful for serving localized content and complying with legal requirements
+* Geoproximity Routing - Routes traffic based on the geographic location of users and resources, with the ability to shift traffic by specifying a bias
+* Multivalue Answer Routing - Returns multiple IP addresses for a DNS query
+
+#### Hosted Zone
+A hosted zone is a container for DNS records for a specific domain. It represents a collection of records that define how to route traffic for a domain and its subdomains. There are two types of hosted zones:
+
+1. Public Hosted Zone:
+    * Used to manage the DNS records for a domain that is accessible over the internet.
+    * Contains records such as A, AAAA, CNAME, MX, TXT, and more.
+2. Private Hosted Zone:
+    * Used to manage DNS records for a domain within one or more Amazon VPCs (Virtual Private Clouds).
+    * Provides DNS resolution for resources within the VPC, not accessible over the internet.
+
+Each hosted zone has a unique set of name servers assigned by Route 53, which are used to respond to DNS queries for the domain. When you create a hosted zone, Route 53 automatically assigns four name servers to the zone and provides the necessary DNS records to route traffic as specified.
+
+### CloudFront
+CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds.
+
+There are 216 Point of Presence globally (edge locations)
+
+#### Security
+Integrates with AWS Shield for DDoS protection, AWS WAF for web application firewall, and supports SSL/TLS for secure content delivery.
+
+#### S3 Transfer Acceleration
+Amazon S3 Transfer Acceleration is a feature that enables fast, easy, and secure transfers of files over long distances between your clients and an S3 bucket. It leverages Amazon CloudFront's globally distributed edge locations to accelerate uploads and downloads.
+
+It uses optimized network paths and Amazon CloudFront edge locations to reduce latency and improve transfer speeds
+
+### AWS Global Accelerator
+AWS Global Accelerator is a networking service that improves the availability and performance of your applications with global users. It uses the AWS global network to optimize the path from your users to your applications, reducing latency and improving performance.
+![alt text](/images/aws/global1.png)
