@@ -59,10 +59,24 @@ This section covers the next topics:
 - [Lambda](#amazon-lambda)
 - [API Gateway](#api-gateway)
 - [Batch](#aws-batch)
-- [Something you will never use](...)
+- [Something you will never use](#something-you-will-never-use)
     - [Lightsail](#amazon-lightsail)
-- [Deployments and Managing]()
-- [CloudFormation]
+- [Deployments and Managing](#deployments-and-managing)
+    - [CloudFormation - IaC](#cloudformation---iac---infrastructure-as-code)
+    - [Elastic Beanstalk](#elastic-beanstalk---platform-as-a-service-paas)
+    - [CodeDeploy](#codedeploy)
+    - [CodeBuild](#codebuild)
+    - [CodePipeline](#codepipeline)
+    - [System Manager (SSM)](#system-manager-ssm)
+- [Global infrastructure](#global-infrastructure)
+    - [Route 53](#route-53)
+    - [CloudFront](#cloudfront)
+    - [AWS Global Accelerator](#aws-global-accelerator)
+- [Cloud Integrations]
+    - [SQS]
+    - [SNS]
+    - [Kinesis]
+    - [Amazon MQ]
 - [VPC](#) - todo
 - in progress
 
@@ -489,7 +503,9 @@ Fully managed service to create, publish, maintain and monitor APIs.
 ## AWS Batch
 Fully managed batch processing at any scale. Efficiently run 100,000s of computing batch jobs on AWS. It will dynamically launch EC2 istances or Spot Instances.
 
-## Amazon Lightsail
+## Something you will never use
+
+### Amazon Lightsail
 Amazon Lightsail is a simplified cloud platform designed for those who need a straightforward way to launch and manage virtual private servers.
 
 ## Deployments and Managing
