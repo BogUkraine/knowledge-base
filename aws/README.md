@@ -72,11 +72,11 @@ This section covers the next topics:
     - [Route 53](#route-53)
     - [CloudFront](#cloudfront)
     - [AWS Global Accelerator](#aws-global-accelerator)
-- [Cloud Integrations]
-    - [SQS]
-    - [SNS]
-    - [Kinesis]
-    - [Amazon MQ]
+- [Cloud Integrations](#cloud-integrations)
+    - [SQS](#sqs---simple-queue-service)
+    - [SNS](#sns---simple-notification-service)
+    - [Kinesis](#kinesis)
+    - [Amazon MQ](#amazon-mq)
 - [VPC](#) - todo
 - in progress
 
@@ -609,3 +609,28 @@ It uses optimized network paths and Amazon CloudFront edge locations to reduce l
 ### AWS Global Accelerator
 AWS Global Accelerator is a networking service that improves the availability and performance of your applications with global users. It uses the AWS global network to optimize the path from your users to your applications, reducing latency and improving performance.
 ![alt text](/images/aws/global1.png)
+
+## Cloud Integrations
+### SQS - Simple Queue Service
+Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to send, store, and receive messages between software components without losing messages or requiring each component to be always available.
+
+Types:
+1. Standard - at least one delivery, ordering is not preserved
+2. FIFO - exactly-once processing, ordering is preserved
+
+### Kinesis
+Amazon Kinesis is a platform on AWS to collect, process, and analyze real-time, streaming data. It enables you to build applications that can continuously ingest and process large streams of data in real-time.
+
+Key components include:
+* Kinesis Data Streams: Capture, process, and store data streams. Allows real-time processing of streaming data with low latency.
+* Kinesis Data Firehose: Load streaming data into data lakes, data stores, and analytics services like Amazon S3, Redshift, Elasticsearch, and Splunk.
+* Kinesis Data Analytics: Analyze streaming data using standard SQL. Provides real-time insights and enables you to build real-time dashboards.
+* Kinesis Video Streams: Capture, process, and store video streams for analytics and machine learning applications.
+
+### SNS - Simple Notification Service
+Amazon SNS is a fully managed messaging service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to send messages to a large number of subscribers through a "publish-subscribe" model.
+
+### Amazon MQ
+Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. It allows you to migrate your existing message brokers to AWS without rewriting your applications.
+
+Supports industry-standard APIs and protocols, including JMS, NMS, AMQP, STOMP, MQTT, and WebSocket.
