@@ -634,3 +634,80 @@ Amazon SNS is a fully managed messaging service that enables you to decouple and
 Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. It allows you to migrate your existing message brokers to AWS without rewriting your applications.
 
 Supports industry-standard APIs and protocols, including JMS, NMS, AMQP, STOMP, MQTT, and WebSocket.
+
+## Cloud Monitoring
+### CloudWatch
+Amazon CloudWatch is a monitoring and observability service. It provides data and actionable insights to monitor applications, understand and respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health.
+
+Features:
+* Metrics: Collect and track metrics from AWS resources, applications, and services.
+* Logs: Collect, monitor, and analyze log data from AWS resources and on-premises servers.
+* Alarms: Set alarms to automatically react to changes in your metrics, such as sending notifications or triggering actions.
+* Dashboards: Create custom dashboards to visualize and correlate metrics and logs in one place.
+* Events: Respond to changes in your AWS resources with automated actions using CloudWatch Events (EventBridge).
+* ServiceLens: Provides end-to-end observability of applications, including tracing, metrics, and logs.
+
+#### Metrics
+Default is 5 mins, paid option for detailed monitoring (1 min)
+
+#### Alarms
+* Auto Scaling - increase or decrease EC2 instances count.
+* EC2 actions - stop, terminate, reboot or recover.
+* SNS notifications.
+
+Alarms statuses:
+1. `OK`
+2. `INSUFFICIENT_DATA`
+3. `ALARM`
+
+#### Logs
+CloudWatch can collect logs from:
+* Elastik Beanstalk
+* ECS
+* Lambda
+* CloudTrail
+* Route53 - DNS queries
+* CloudWatch log agents - on EC2 or on-premises servers
+
+
+### EventBridge
+EventBridge is a serverless event bus service that makes it easy to connect applications using data from your own applications, integrated Software-as-a-Service (SaaS) applications, and AWS services. It helps you build event-driven architectures by routing events from sources to targets. 
+
+![alt text](/images/aws/cloudmonitoring1.png)
+
+Features:
+* Event Buses: Create custom event buses to receive events from your applications or SaaS partners.
+* Event Rules: Define rules to filter and route events to one or more target services.
+* Targets: Route events to various AWS services such as Lambda, SQS, SNS, Step Functions, and more.
+* Schema Registry: Automatically discover and store event schemas, making it easier to understand and use events.
+* Integration: Integrates with a wide range of AWS services and third-party SaaS applications.
+
+### CloudTrail
+AWS CloudTrail is a service that enables governance, compliance, and operational and risk auditing of your AWS account. It continuously logs and monitors account activity related to actions across your AWS infrastructure. 
+
+Key features include:
+* **Event Logging**: Records API calls and actions made by users, roles, or AWS services.
+* **Event History**: Provides a history of AWS API calls for your account, including who made the call, the services used, the actions performed, and parameters for the actions.
+* **Insights**: Detects unusual activity in your account by analyzing CloudTrail events.
+* **Compliance**: Helps ensure compliance with internal policies and regulatory standards by providing detailed logs of all account activity.
+* **Integration**: Integrates with Amazon CloudWatch for monitoring and alerting on specific API activity.
+
+### X-Ray * to check
+AWS X-Ray is a service that helps developers analyze and debug distributed applications, such as those built using microservices architecture. It provides insights into the performance of your applications and helps identify and troubleshoot issues. 
+
+Key features include:
+* End-to-End Tracing: Trace requests as they travel through your application, capturing data about the underlying components.
+* Service Map: Visualize the relationships and data flow between services in your application.
+* Performance Insights: Identify performance bottlenecks and latency issues by analyzing trace data.
+* Error Analysis: Detect and diagnose errors and exceptions in your application.
+* Integration: Works with AWS services like EC2, Lambda, API Gateway, and more, as well as with on-premises applications.
+
+### CodeGuru * to check
+Amazon CodeGuru is a developer tool powered by machine learning that provides automated code reviews and application performance recommendations.
+
+Key features include:
+* CodeGuru Reviewer: Analyzes your code to identify critical issues, security vulnerabilities, and provides recommendations for improving code quality. It integrates with your source control system to perform automated code reviews.
+* CodeGuru Profiler: Continuously monitors the runtime behavior of your applications, identifies performance bottlenecks, and provides recommendations to optimize resource usage and reduce costs.
+
+### AWS Health Dashboard
+The AWS Health Dashboard provides personalized information and alerts about the health of your AWS resources and services. It helps you manage and respond to events that may impact your AWS environment.

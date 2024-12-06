@@ -11,6 +11,8 @@ This section covers the next topics:
 - [Virtualization](#virtualization) - TODO
 - [Containerization](#containerization) - TODO
   - [Docker](#docker)
+- [Resource Monitoring](#resource-monitoring)
+  - [Metrics](#metrics)
 - TODO
 
 ## Authentication and Authorization
@@ -94,3 +96,34 @@ TODO
 
 ### Docker
 todo
+
+## Resource Monitoring
+### Metrics
+#### LA (Load Average)
+
+LA is a measure of the amount of computational work that a computer system performs. The load average represents the average system load over a period of time. More details [here](https://medium.com/coinmonks/decoding-load-average-in-linux-cdc98b30e0c6).
+
+What LA says: how many processes are currently waiting their next 1/100th second time frame. Of course, it is a mean value. 
+Normal when it less than amount of CPU cores
+
+#### RAM 
+Running out of RAM indicates that the server is under severe load and application performance will almost certainly be noticeable to end users.
+
+#### SWAP
+When available RAM is short or totally maxed out, Linux moves data from RAM to SWAP. High SWAP usage means that you don’t have enough RAM
+
+Server might reboot if you will run out of SWAP
+
+#### Disp Space
+Track current disk space used versus the total disk space on the server’s hard drives, as well as the total inodes available on the drives.
+
+#### CPU
+If the CPU usage goes to 100% for all cores, then your server is thinking too hard about something. Usually when this happens for an extended period of time, your end users will notice poor performance and response times. Sites hosted on the server might become unresponsive or extremely slow.
+
+* Idle - idle task - when nothing to do
+* User - running user space processes
+* System - running the kernel
+* Iowait - idle, while system making disk I/O request.
+* Steal - virtual CPU waits for a real CPU while the hypervisor is servicing another virtual processor
+* Softirq - software interrupts
+* Nice  - users' processes that have been "niced".
