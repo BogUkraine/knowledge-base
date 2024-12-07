@@ -77,7 +77,15 @@ This section covers the next topics:
     - [SNS](#sns---simple-notification-service)
     - [Kinesis](#kinesis)
     - [Amazon MQ](#amazon-mq)
-- [VPC](#) - todo
+- [Cloud Monitoring](#cloud-monitoring)
+    - [CloudWatch](#cloudwatch)
+    - [EventBridge](#eventbridge)
+    - [CloudTrail](#cloudtrail)
+    - [X-Ray](#x-ray--to-check)
+    - [CodeGuru](#codeguru--to-check)
+- [Networking](#networking)
+    - [VPC](#vpc---virtual-private-cloud)
+- [Security & Compliance](#security-and-compliance)
 - in progress
 
 ## Cloud
@@ -752,7 +760,7 @@ Route tables are used to define access to the internet and between subnets.
 Internet Gateways help our VPC instances connect with the internet.
 Public Subnets have a route to the internet gateway.
 
-NAT Gateways (AWS-managed) & Nat Instances (self-managed) allow your instances in Private Subnets to access the internet whule remaining private.
+NAT Gateways (AWS-managed) & Nat Instances (self-managed) allow your instances in Private Subnets to access the internet while remaining private.
 ![alt text](/images/aws/networking2.png)
 
 #### CIDR
@@ -815,3 +823,5 @@ It allows to connect to EC2 over a private IP (just as if you were in the privat
 
 #### Transit Gateway
 For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection.
+
+## Security and Compliance
