@@ -711,3 +711,107 @@ Key features include:
 
 ### AWS Health Dashboard
 The AWS Health Dashboard provides personalized information and alerts about the health of your AWS resources and services. It helps you manage and respond to events that may impact your AWS environment.
+
+## Networking
+### VPC - Virtual Private Cloud
+Amazon VPC is a service that allows you to create a logically isolated network within the AWS cloud. It provides complete control over your virtual networking environment, including selection of IP address ranges, creation of subnets, and configuration of route tables and network gateways.
+
+Features:
+* Subnets: Divide your VPC into subnets to group resources based on security and operational needs.
+* Route Tables: Control the routing of traffic within your VPC and to external networks.
+* Internet Gateway: Enable communication between your VPC and the internet.
+* NAT Gateway: Allow instances in a private subnet to connect to the internet or other AWS services while preventing inbound traffic from the internet.
+* Security Groups: Act as virtual firewalls to control inbound and outbound traffic to your instances.
+* Network ACLs: Provide an additional layer of security by controlling traffic at the subnet level.
+* VPC Peering: Connect multiple VPCs for secure communication across regions or accounts.
+* VPN Connections: Establish secure connections between your on-premises network and your VPC.
+
+#### IP
+IPv4 - Internet Protocol version 4 (4.3 billion addresses)
+* public IP - can be used on the Internet
+* private IP - can be used on private nteworks (LAN) such as internal AWS networking (eg., 192.168.1.1)
+* EC2 gets a new public IP every time.
+* EC2 has a fixed private IP
+* Elastic IP - allows to attach a fixed public IPv4 address to EC2.
+* All public IPv4 will be charged 0.005 per hour (including EIP).
+
+IPv6 - Internet Protocol version 6 (3.4*10^38 addresses)
+* every IP address is public in AWS (no private range) - 2001:db8:3333:4444:cccc:dddd:eeee:ffff
+* free
+
+#### Subnets
+Allow to partition your network inside VPC (Subnet - AZ resource, VPC - regional resource)
+
+A public subnet is a subnet that is accessible from the internet.
+A private subnet is a subnet that is not accessible from the internet.
+
+Route tables are used to define access to the internet and between subnets.
+![alt text](/images/aws/networking1.png)
+
+#### Internet Gateways & NAT Gateways
+Internet Gateways help our VPC instances connect with the internet.
+Public Subnets have a route to the internet gateway.
+
+NAT Gateways (AWS-managed) & Nat Instances (self-managed) allow your instances in Private Subnets to access the internet whule remaining private.
+![alt text](/images/aws/networking2.png)
+
+#### CIDR
+[Link](https://cidr.xyz/)
+
+CIDR (Classless Inter-Domain Routing) notation is a compact method for specifying IP address ranges and network masks.
+An IP address consists of 4 octets, each containing 8 bits that represent values from 0 to 255. In CIDR notation, a forward slash (/) followed by a number indicates the length of the network prefix in bits.
+
+This prefix length determines the network mask and the number of available host addresses within the specified IP range.
+
+#### NACL (Network ACL)
+It is a firewall that controls traffic from and to subnet. It can have ALLOW and DENY rules. Are attached at the subnet level.
+
+Rules only include IP addresses.
+
+#### Security Groups
+It is a firewall that controls traffic to and from EC2. Can have only ALLOW rules. RUles include IP addresses and other security groups.
+
+![alt text](/images/aws/networking3.png)
+
+#### VPC Flow Logs
+Capture information about IP traffic going into your interfaces:
+* VPC Flow logs
+* Subnet Flow logs
+* Elastic Network Interface Flow logs.
+
+#### VPC Peering
+It allows to connect two VPC privately using AWS's network and makes them behave as if they were in the same network.
+
+But they shouldn't have overlapping CIDR. The connection is not transitive. If we have 3 VPCs (A, B, C) and A bound with B through VPC Peering. And C is connected with A, B and C will not be connected.
+![alt text](/images/aws/networking4.png)
+
+#### VPC Endpoints
+Endpoints allow you to connect to AWS Services using a private network instead of the public www network.
+
+Provides better security and lower latency.
+
+* VPC Endpoint Gateway: S3 & DynamoDB
+* VPC Endpoint Interface: the rest (e.g. CloudWatch)
+![alt text](/images/aws/networking5.png)
+
+#### PrivateLink (VPC Endpoint Services)
+It is most secure and scalable way to expose a service to 1000s of VPCs. It doesn't require VPC peering, internet gateway, NAT, route table...
+
+However, it requires a network load balancer from 3rd party to be created (Service VPC) and Elastic Network Interface (ENI) - Customer interface
+![alt text](/images/aws/networking6.png)
+
+#### Site-to-Site VPN and Direct Connect
+Site-to-Site connects an on-premises VPN to AWS, goes over the public internet.
+
+It needs Customer Gateway and Virtual Private Gateway.
+
+Direct Connect establish a physical connection between on-premises and AWS. The connection is private, secure and fast, goes over a private network.
+Takes at least a month to establish.
+![alt text](/images/aws/networking7.png)
+
+#### AWS Client VPN
+Connection from your computer using OpenVPN to your private network in AWS and on-premises.
+It allows to connect to EC2 over a private IP (just as if you were in the private VPC network)
+
+#### Transit Gateway
+For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection.

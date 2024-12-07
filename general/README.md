@@ -13,6 +13,7 @@ This section covers the next topics:
   - [Docker](#docker)
 - [Resource Monitoring](#resource-monitoring)
   - [Metrics](#metrics)
+- [VPN]
 - TODO
 
 ## Authentication and Authorization
@@ -114,7 +115,7 @@ When available RAM is short or totally maxed out, Linux moves data from RAM to S
 
 Server might reboot if you will run out of SWAP
 
-#### Disp Space
+#### Disk Space
 Track current disk space used versus the total disk space on the server’s hard drives, as well as the total inodes available on the drives.
 
 #### CPU
@@ -127,3 +128,4 @@ If the CPU usage goes to 100% for all cores, then your server is thinking too ha
 * Steal - virtual CPU waits for a real CPU while the hypervisor is servicing another virtual processor
 * Softirq - software interrupts
 * Nice  - users' processes that have been "niced".
+
