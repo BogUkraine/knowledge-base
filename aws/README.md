@@ -825,3 +825,83 @@ It allows to connect to EC2 over a private IP (just as if you were in the privat
 For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection.
 
 ## Security and Compliance
+### AWS Shared Responsibility Model
+AWS responsibilities is security OF the cloud:
+* hardware
+* software
+* facilities
+* networking 
+
+Customer responsibility is security IN the cloud:
+* ec2 - management of OS (security patches and updates)
+* firewall
+* network configuration
+* IAM
+* application data
+![alt text](/images/aws/security1.png)
+
+### Protection
+* AWS Shield Standard protects against DDOS with no additional costs. SYN/UDP Floods, reflection attacks, 3/4 layer attacks
+* AWS Shield Advanced - 24/7 premium DDOS protection. More sophisticated attacks
+* AWS WAF (web application firewall) - filter specific requests based on rules. Protect from common web exploits (Layer 7), SQL injection, XSS, rate-based rules
+CloudFront, Route53.
+* AWS Network Firewall - protect VPC from layer 3 to layer 7
+* AWS Firewall Manager. Manage security rules in all accounts of an aws organization
+![alt text](/images/aws/security2.png)
+
+### KMS (Key Management Service)
+AWS manages the software for encryption
+
+Types of KMS Keys:
+* Customer managed key
+* AWS managed key
+* AWS owned key
+* CloudHSM Keys
+
+### CloudHSM
+AWS provisions encryption hardware.
+
+### ACM - AWS Certificate Manager
+It let's easily provision, manage, and deploy SSL/TLS certificates
+
+### AWS Secrets Manager
+A service meant for storing secrets. It has a capability to force rotation of secrets every x days. Integration with Amazon RDS.
+
+### AWS Artifact
+It is a portal that provides customers with on-demand access to AWS compliance documentation and AWS agreements. Produces reports and agreements to support internal audit or compliance
+
+### GuardDuty
+Intelligent Threat discovery to protect AWS Account. It uses machine learning algorithms, anomaly detection, 3rd party data. Can protect from CryptoCurrency attack
+![alt text](/images/aws/security3.png)
+
+### Amazon Inspector
+The service that allows to run automated security assessments.
+
+Runs for:
+* EC2 - requires System manager agent installation
+* Containers in ECR
+* Lambda Functions
+
+It produces reports via an integration with Security Hub. Also, sends findings to Amazon Event Bridge
+
+### AWS Config
+... TODO
+
+### Amazon Macie
+It is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect sensitive data in AWS. Integrates with S3, alert to sensitive data, such as personally identifiable information - PII
+
+### Security Hub
+Central security tool to manage security across several AWS accounts and automate security checks.
+
+It automatically aggregates alerts in predefined or personal findings formats from various services:
+* Config
+* GuardDuty
+* Inspector
+* Macie
+* IAM Access Analyzer
+* AWS System Manager
+* AWS Firewall Manager
+* AWS Health
+* AWS Partner Network Solutions
+
+![alt text](/images/aws/security4.png)
