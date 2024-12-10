@@ -905,3 +905,9 @@ It automatically aggregates alerts in predefined or personal findings formats fr
 * AWS Partner Network Solutions
 
 ![alt text](/images/aws/security4.png)
+
+### AWS Detective
+Analyzes, investigates, and quickly identifies the root cause of security issues or suspicious activities using ML and graphs. Automatically collects and processes events from VPC Glow Logs, Cloud Trail, GuardDuty and creates a unified view.
+
+### AWS Abuse
+It is a team to which you can report suspected, abusive or prohibited behavior like span, port scanning, DDoS made from AWS.
