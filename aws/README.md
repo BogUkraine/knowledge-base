@@ -911,3 +911,17 @@ Analyzes, investigates, and quickly identifies the root cause of security issues
 
 ### AWS Abuse
 It is a team to which you can report suspected, abusive or prohibited behavior like span, port scanning, DDoS made from AWS.
+
+## Machine Learning
+### Amazon Rekognition
+Service that find objects, people, text, scenex in images and videos using ML.
+
+Also, facial analysis and facial search to do user verification, people counting.
+
+Use cases:
+* labeling
+* content moderation
+* text detection
+* face detection and analysis
+* celebrity recognition
+* pathing (for sports game analysis)
