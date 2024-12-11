@@ -925,3 +925,19 @@ Use cases:
 * face detection and analysis
 * celebrity recognition
 * pathing (for sports game analysis)
+
+### Transcribe
+Converts speech to text using ASR - automatic speech recognition. Automatically remove PII - Personally Identifiable Information using Redaction.
+
+### Poly
+Turn text into lifelike speech. Allowing to create applications that talk.
+
+### Translate
+Natural and accurate language translation. Helps to localize content.
+
+### Lex & Connect
+Amazon Lex - Same technology that powers Alexa.
+
+Amazon Connect - recieve calls, create contact flows, cloud-based virtual contact center.
+
+Contact center replacement.
