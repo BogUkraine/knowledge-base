@@ -941,3 +941,18 @@ Amazon Lex - Same technology that powers Alexa.
 Amazon Connect - recieve calls, create contact flows, cloud-based virtual contact center.
 
 Contact center replacement.
+
+### Comprehend
+This service is used for NLP - Natural Language Processing. 
+
+Uses machine learning to find insights and relationships in the text:
+* language of the text
+* extract key phrases, places, people, brands or events
+* understand how positive or negative the text is
+
+### SageMaker
+Fully managed service to build ML models.
+
+### Forecast
+Fully managed service that uses ML to deliver highly accurate forecasts.
+Takes time-series data and predicts.
