@@ -956,3 +956,16 @@ Fully managed service to build ML models.
 ### Forecast
 Fully managed service that uses ML to deliver highly accurate forecasts.
 Takes time-series data and predicts.
+
+### Kendra
+Fully managed document search service powered by ML. Extracts answers from within a document (txt, pdg, html, PowerPoint, Word)
+![alt text](/images/aws/ml1.png)
+
+It has ability to manually fine-tune search results (importance of data, freshness)
+
+### Personalize
+Fully managed ML-service to build apps with real-time personalized recommendations
+![alt text](/images/aws/ml2.png)
+
+### Textract
+Automatically extract text, handwriting, and data from any scanned documents using AI and ML
