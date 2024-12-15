@@ -112,6 +112,8 @@ This section covers the next topics:
     - [Kendra](#kendra)
     - [Personalize](#personalize)
     - [Textract](#textract)
+- [Account Management, Billing & Support](#account-management-billing--support)
+    - [AWS Organizations](#aws-organizations)
 - in progress
 
 ## Cloud
@@ -995,3 +997,15 @@ Fully managed ML-service to build apps with real-time personalized recommendatio
 
 ### Textract
 Automatically extract text, handwriting, and data from any scanned documents using AI and ML
+
+## Account Management, Billing & Support
+### AWS Organizations
+It is a global service that allows to manage multiple AWS accounts.
+There are master and child accounts.
+
+Cost benefits:
+* The service provides the ability of consolidated billing across all accounts.
+* Pricing benefits from aggregated usage (the more you use some service, the bigger discount you could get)
+* Pooling of Reserved EC2 instances
+
+Allows to restrict account privileges using SCP - Service Control Policies.
