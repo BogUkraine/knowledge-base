@@ -1009,3 +1009,25 @@ Cost benefits:
 * Pooling of Reserved EC2 instances
 
 Allows to restrict account privileges using SCP - Service Control Policies.
+
+### AWS Control Tower
+It is a service that simplifies the setup and governance of a secure, multi-account AWS environment based on AWS best practices.
+It provides a pre-configured environment called a landing zone.
+
+AWS Control Tower helps organizations quickly set up a secure and compliant multi-account environment, making it easier to manage and govern their AWS resources.
+
+### AWS RAM - Resource Access Manager
+AWS Resource Access Manager (RAM) is a service that enables you to securely share your AWS resources with other AWS accounts or within your AWS Organization. It helps you manage resource sharing without needing to create duplicate resources in each account.
+
+![alt text](/images/aws/account.png)
+
+### AWS Service Catalog
+AWS Service Catalog is a service that allows organizations to create, manage, and distribute catalogs of approved products to end users who can then access the products they need in a self-service manner. It helps maintain governance and compliance while enabling users to quickly deploy approved resources.
+
+### Pricing Models
+These models are:
+1. Pay as you go - pay for what you use
+2. Save when you reserve
+3. Pay less by using more - volume-based discounts
+4. Pay less as AWS grows
+
