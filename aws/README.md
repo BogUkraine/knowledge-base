@@ -1031,3 +1031,35 @@ These models are:
 3. Pay less by using more - volume-based discounts
 4. Pay less as AWS grows
 
+### Savings Plan
+AWS Savings Plans are flexible pricing models that offer significant savings on AWS usage compared to On-Demand pricing. They provide a cost-effective way to use AWS services by committing to a consistent amount of usage (measured in USD per hour) for a one- or three-year term.
+
+Key features include:
+
+* Compute Savings Plans: Offer the most flexibility and apply to a wide range of AWS services, including Amazon EC2, AWS Lambda, and AWS Fargate, regardless of instance family, size, operating system, or region.
+* EC2 Instance Savings Plans: Provide the lowest prices and apply to specific Amazon EC2 instance families within a chosen region, regardless of size, operating system, or tenancy.
+
+### AWS Compute Optimizer
+Is is a service that helps you optimize your AWS compute resources by providing recommendations for improving performance and reducing costs. It analyzes your resource usage and provides actionable insights to help you choose the right AWS resources for your workloads. 
+
+Key features include:
+* Resource Recommendations: Provides recommendations for Amazon EC2 instances, Auto Scaling groups, Amazon EBS volumes, and AWS Lambda functions.
+* Performance Insights: Analyzes historical utilization data to identify underutilized or over-provisioned resources.
+* Cost Savings: Helps reduce costs by recommending more cost-effective resource configurations.
+* Integration: Integrates with AWS services like AWS Cost Explorer and AWS Trusted Advisor for comprehensive cost management and optimization.
+
+### AWS Pricing Calculator
+[Calculator](https://calculator.aws/#/)
+
+### AWS Billing Dashboard
+The AWS Billing Dashboard is a centralized interface that provides detailed insights into your AWS account's billing and usage.
+
+### AWS Cost Explorer
+AWS Cost Explorer is a tool that allows you to visualize, understand, and manage your AWS costs and usage over time. It provides a range of features to help you analyze your spending and identify cost-saving opportunities. 
+
+Key features include:
+* Cost and Usage Reports: Generate detailed reports on your AWS spending and usage patterns.
+* Filtering and Grouping: Filter and group your cost and usage data by various dimensions such as service, linked account, region, and more.
+* Custom Reports: Create custom reports to track specific cost and usage metrics that are important to your organization.
+* Forecasting: Predict future costs based on historical usage data to help with budgeting and planning.
+* Savings Plans and Reserved Instances: Analyze the impact of Savings Plans and Reserved Instances on your overall costs.
