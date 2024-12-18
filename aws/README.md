@@ -114,6 +114,15 @@ This section covers the next topics:
     - [Textract](#textract)
 - [Account Management, Billing & Support](#account-management-billing--support)
     - [AWS Organizations](#aws-organizations)
+    - [AWS Control Tower](#aws-control-tower)
+    - [AWS RAM - Resource Access Manager](#aws-ram---resource-access-manager)
+    - [AWS Service Catalog](#aws-service-catalog)
+    - [Pricing Models](#pricing-models)
+    - [Savings Plan](#savings-plan)
+    - [AWS Compute Optimizer](#aws-compute-optimizer)
+    - [AWS Pricing Calculator](#aws-pricing-calculator)
+    - [AWS Billing Dashboard](#aws-billing-dashboard)
+    - [AWS Cost Explorer](#aws-cost-explorer)
 - in progress
 
 ## Cloud
