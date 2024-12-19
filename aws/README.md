@@ -1072,3 +1072,50 @@ Key features include:
 * Custom Reports: Create custom reports to track specific cost and usage metrics that are important to your organization.
 * Forecasting: Predict future costs based on historical usage data to help with budgeting and planning.
 * Savings Plans and Reserved Instances: Analyze the impact of Savings Plans and Reserved Instances on your overall costs.
+
+### Support Plans
+![alt text](/images/aws/am1.png)
+
+1. Basic Support:
+    * Free for all AWS customers.
+    * Includes 24/7 access to customer service, documentation, whitepapers, and support forums.
+    * Access to AWS Trusted Advisor's core checks and recommendations.
+
+2. Developer Support:
+    * Designed for early-stage development and testing.
+    * Includes all Basic Support features.
+    * Business hours access to Cloud Support Associates via email.
+    * General guidance within 24 business hours and system impaired response within 12 business hours.
+    * Starts at $29 per month.
+    * Business Support:
+
+3. Ideal for production workloads.
+    * Includes all Developer Support features.
+    * 24/7 access to Cloud Support Engineers via phone, chat, and email.
+    * Faster response times: general guidance within 24 hours, system impaired within 12 hours, production system impaired within 4 hours, and production system down within 1 hour.
+    * Access to AWS Trusted Advisor's full set of checks and recommendations.
+    * Access to Infrastructure Event Management for an additional fee.
+    * Starts at $100 per month or 10% of monthly AWS usage.
+
+4. Enterprise Support:
+    * Comprehensive support for mission-critical workloads.
+    * Includes all Business Support features.
+    * 15-minute response time for business-critical system down issues.
+    * Access to a Technical Account Manager (TAM) for proactive guidance and best practices.
+    * Access to a Support Concierge for billing and account assistance.
+    * Access to Infrastructure Event Management.
+    * Starts at $15,000 per month or 10% of monthly AWS usage.
+
+
+### Best practices:
+1. Operate multiple accounts using Organizations
+2. Use SCP (service control policies) to restrict account power
+3. Setup multiple account with best-practices with AWS Control Tower
+4. Use Tags & Cost Allocations Tags for easy management & billing
+5. IAM guidelimes: MFA, least-privilege, password policy, password rotation
+6. Config to record all resources configurations & compliance over time
+7. CloudFormation to deploy stacks across accounts and regions
+8. Trusted Advisor to get insights, Support Plan adapted to your needs
+9. Send Service Logs and Access Logs to S3 or CloudWatch Logs
+10. CloudTrail to record API calls made withing your account
+11. If your account is compromised: change the root password, delete and rotate all passwords/keys, contact AWS support
